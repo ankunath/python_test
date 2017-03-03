@@ -11,5 +11,5 @@ build:
     - pip install coverage
     - ls
     - pwd
-    - coverage run mounttest.py
+    # - coverage run mounttest.py
     - coverage xml -o shippable/codecoverage/coverage.xml mounttest.py
