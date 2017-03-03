@@ -8,5 +8,6 @@ build:
   advancedReporting: true
   ci:
     - mkdir -p shippable/codecoverage
+    - pip install coverage
     - coverage run --branch python_test/mounttest.py
     - coverage xml -o shippable/codecoverage/coverage.xml python_test/mounttest.py
