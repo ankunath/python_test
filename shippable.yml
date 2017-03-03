@@ -1,0 +1,12 @@
+language: java
+
+jdk:
+  - openjdk7
+#  - oraclejdk8
+
+build:
+  advancedReporting: true
+  ci:
+    - mkdir -p shippable/codecoverage
+    - coverage run --branch python_test/mounttest.py
+    - coverage xml -o shippable/codecoverage/coverage.xml python_test/mounttest.py
