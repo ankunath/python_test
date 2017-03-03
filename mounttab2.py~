@@ -17,5 +17,17 @@ def parse_mounts():
             result.append(res)
     return result
 
+def mount_details():
+    """
+    Prints the mount details
+    """
+    result = parse_mounts()
+    for line in result:
+        if len(line) == 4:
+            print('%s on %s type %s %s' % line)
+        else:
+            print('%s on %s type %s' % line)
+
+
 if __name__ == '__main__':
     mount_details()
