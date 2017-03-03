@@ -12,4 +12,5 @@ build:
     - ls
     - pwd
     # - coverage run mounttest.py
-    - coverage xml -o shippable/codecoverage/coverage.xml mounttest.py
+    - cp -r coverage.xml shippable/codecoverage
+    #- coverage xml -o shippable/codecoverage/coverage.xml mounttest.py
