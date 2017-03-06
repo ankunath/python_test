@@ -12,6 +12,7 @@ build:
     - ls
     - pwd
     - pip install -U pytest
+    - pip install pytest-cov
     #- coverage run --branch mounttest.py
     - pytest --cov-config .coveragerc --cov-report xml:shippable/codecoverage/coverage.xml --cov="mounttab2"
     # - cp -r coverage.xml shippable/codecoverage
