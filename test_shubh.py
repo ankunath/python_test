@@ -1,20 +1,58 @@
+#!/usr/bin/env python
 import unittest
+from mounttab2 import parse_mounts, parse_mounts1, parse_mounts2, parse_mounts3
 
-def raises_error(*args, **kwds):
-    raise ValueError('Invalid value: %s%s' % (args, kwds))
+class TestMount(unittest.TestCase):
+    """
+    Our basic test class
+    """
 
-class ExceptionTest(unittest.TestCase):
+    def test_parsemount(self):
+        """
+        The actual test.
+        Any method which starts with ``test_`` will considered as a test case.
+        """
+        result = parse_mounts()
+	
+	var1 = 100
+	if var1:
+	   print "1 - Got a true expression value"
+	   print var1
+	else:
+	   print "1 - Got a false expression value"
+	   print var1
 
-    def test_trap_locally(self):
-        try:
-            raises_error('a', b='c')
-        except ValueError:
-            pass
-        else:
-            self.fail('Did not see ValueError')
+        self.assertIsInstance(result, list)
+        self.assertIsInstance(result[0], tuple)
 
-    def test_assert_raises(self):
-        self.assertRaises(ValueError, raises_error, 'a', b='c')
+    def test_parsemount1(self):
+        """
+        The actual test.
+        Any method which starts with ``test_`` will considered as a test case.
+        """
+        result = parse_mounts1()
+        self.assertIsInstance(result, list)
+        self.assertIsInstance(result[0], tuple)
+
+    def test_parsemount2(self):
+        """
+        The actual test.
+        Any method which starts with ``test_`` will considered as a test case.
+        """
+        result = parse_mounts2()
+        self.assertIsInstance(result, list)
+        self.assertIsInstance(result[0], tuple)
+
+    def test_parsemount3(self):
+        """
+        The actual test.
+        Any method which starts with ``test_`` will considered as a test case.
+        """
+        result = parse_mounts3()
+        self.assertIsInstance(result, list)
+        self.assertIsInstance(result[0], tuple)
+
+ 
 
 if __name__ == '__main__':
     unittest.main()

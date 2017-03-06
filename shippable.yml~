@@ -1,0 +1,18 @@
+language: java
+
+jdk:
+  - openjdk7
+  - oraclejdk8
+
+build:
+  advancedReporting: true
+  ci:
+    - mkdir -p shippable/codecoverage
+    - pip install coverage
+    - ls
+    - pwd
+    - pip install -U pytest
+    #- coverage run --branch mounttest.py
+    - python -m pytest --cov-config .coveragerc --junitxml=pytest.xml --cov-report xml:coverage.xml --cov="."
+    # - cp -r coverage.xml shippable/codecoverage
+   # - coverage xml -o shippable/codecoverage/coverage.xml mounttest.py
